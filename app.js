@@ -8,7 +8,7 @@ const models = require('./models');
 const database = models.db;
 const path = require('path')
 const routes = require('./routes');
-const PORT = 3000;
+const PORT = 8000;
 
 //logging middleware
 app.use(morgan('dev'));
@@ -25,7 +25,7 @@ nunjucks.configure('views',{noCache:true});
 //static files
 app.use(express.static(path.join(__dirname,'/public')));
 
-//routing 
+//routing
 app.use('/', routes);
 
 //error middleware

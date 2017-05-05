@@ -1,21 +1,25 @@
-<h1> HOME </h1>
+{% extends 'layout.html' %}
 
-<label>Hotels</label>
-<select>
-  {% for hotel in Hotels %}
-      <option>{{hotel.name}}</option>
-    {% endfor %}
-</select>
-<label>Restaurants</label>
-<select>
-  {% for restaurant in Restaurants %}
-      <option>{{restaurant.name}}</option>
-    {% endfor %}
-</select>
-<label>Activities</label>
-<select>
-  {% for activity in Activities %}
-      <option>{{activity.name}}</option>
-    {% endfor %}
-</select>
+{% block title %}Your Trip{% endblock %}
 
+  {% block content %}
+  <label>Hotels</label>
+  <select>
+    {% for hotel in Hotels %}
+        <option>{{hotel.name}}</option>
+      {% endfor %}
+  </select>
+  <label>Restaurants</label>
+  <select>
+    {% for restaurant in Restaurants %}
+        <option>{{restaurant.name}}</option>
+      {% endfor %}
+  </select>
+  <label>Activities</label>
+  <select>
+    {% for activity in Activities %}
+        <option>{{activity.name}}</option>
+      {% endfor %}
+  </select>
+
+{% endblock %}

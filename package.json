@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "prod": "npm run start:production",
+    "start:production": "node theServerFilename",
+    "start:dev": "nodemon -e html,css,js app.js",
+    "start": "npm run start:dev",
+    "build:css": "node-sass -w -r assets/stylesheets -o public/stylesheets"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +21,8 @@
     "pg": "^6.1.5",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.30.4"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.2"
   }
 }

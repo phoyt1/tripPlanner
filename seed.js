@@ -67,7 +67,6 @@ db.sync({force: true})
 .then(function () {
   console.log("Dropped old data, now inserting data");
   const creatingHotels = Promise.map(data.hotels, function (hotel) {
-    console.log(hotel.place);
     return Hotel.create(hotel, { include: [Place] });
   });
   const creatingRestaurants = Promise.map(data.restaurants, function (restaurant) {

@@ -24,6 +24,8 @@ nunjucks.configure('views',{noCache:true});
 
 //static files
 app.use(express.static(path.join(__dirname,'/public')));
+app.use('/jquery',express.static(path.join(__dirname,'node_modules/jquery/dist')));
+app.use('/bootstrap',express.static(path.join(__dirname,'node_modules/bootstrap/dist')));
 
 //routing
 app.use('/', routes);
@@ -34,7 +36,7 @@ app.use(function (err,request,response,next) {
 	console.error(err)
 })
 
-database.sync({force:true})
+database.sync()
 .then( databaseInformation => {
 	app.listen(PORT, () => {
 		console.log(`On Port ${PORT}`);
